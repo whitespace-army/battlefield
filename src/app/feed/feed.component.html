@@ -1,10 +1,10 @@
 <div *ngFor="let feedItem of feed">
-  <div class="item">
-    <img class="item-image" src="{{feedItem.image}}">
-    <div class="item-info">
+  <md-card class="item">
+    <img md-card-image src="{{feedItem.image}}">
+    <md-card-content>
       <div>{{feedItem.date}}</div>
-      <div>{{feedItem.title}}</div>
-      <div>{{feedItem.description}}</div>
-    </div>
-  </div>
+      <md-card-title>{{feedItem.title}}</md-card-title>
+      <md-card-subtitle>{{feedItem.description}}</md-card-subtitle>
+    </md-card-content>
+  </md-card>
 </div>
