@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FeedService } from './feed.service';
 import { FeedItem } from './feed-item';
 
 @Component({
@@ -7,15 +8,16 @@ import { FeedItem } from './feed-item';
   styleUrls: ['./feed.component.styl']
 })
 export class FeedComponent implements OnInit {
-  feed: Array<FeedItem> = [{
-    image: '/assets/logo.png',
-    title: 'Trump for The Best',
-    description: 'We will make Murica great again!',
-    date: '20.01.2017'
-  }];
-  constructor() { }
 
-  ngOnInit() {
+  constructor(private feedService: FeedService) { }
+
+  feed: Array<FeedItem> = [];
+
+  getFeed(): Array<FeedItem> {
+     return this.feedService.getFeed();
   }
 
+  ngOnInit(): void {
+    this.feed = this.getFeed();
+  }
 }

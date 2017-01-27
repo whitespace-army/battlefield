@@ -9,6 +9,8 @@ import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './menu/menu.component';
 import { FeedComponent } from './feed/feed.component';
 
+import { FeedService } from './feed/feed.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +24,7 @@ import { FeedComponent } from './feed/feed.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [FeedService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
