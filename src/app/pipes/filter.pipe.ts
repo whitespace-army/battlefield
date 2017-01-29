@@ -6,8 +6,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(value: any, args?: any): any {
-    return value.filter(x => RegExp(args).test(x.title));
+  transform(value: any, query?: any): any {
+    return value.filter(x => RegExp(query, 'i').test(x.title));
   }
 
 }
