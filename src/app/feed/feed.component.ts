@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FeedService } from './feed.service';
 import { FeedItem } from './feed-item';
 
+import { DomSanitizer } from '@angular/platform-browser';
+import { MdIconRegistry } from '@angular/material';
+
+
 @Component({
   selector: 'app-feed',
   templateUrl: './feed.component.html',
@@ -9,7 +13,11 @@ import { FeedItem } from './feed-item';
 })
 export class FeedComponent implements OnInit {
 
-  constructor(private feedService: FeedService) { }
+  constructor(private feedService: FeedService, iconRegistry: MdIconRegistry, sanitizer: DomSanitizer) {
+    iconRegistry.addSvgIcon(
+      'thumbs-up',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/thumb-up.svg'));
+  }
 
   filterValue: string;
 
