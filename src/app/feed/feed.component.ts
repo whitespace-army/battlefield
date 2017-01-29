@@ -11,6 +11,18 @@ export class FeedComponent implements OnInit {
 
   constructor(private feedService: FeedService) { }
 
+  filterValue: string;
+
+  searchValue: string;
+
+  filters: Array<any> = [{
+    name: 'ID',
+    value: 'id'
+  },{
+    name: 'Title',
+    value: 'title'
+  }];
+
   feed: Array<FeedItem> = [];
 
   getFeed(): Array<FeedItem> {

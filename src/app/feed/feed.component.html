@@ -1,8 +1,21 @@
-<md-card *ngFor="let feedItem of feed" class="item">
-  <img md-card-image src="{{feedItem.image}}">
-  <md-card-content>
-    <div>{{feedItem.date}}</div>
-    <md-card-title>{{feedItem.title}}</md-card-title>
-    <md-card-subtitle>{{feedItem.description}}</md-card-subtitle>
-  </md-card-content>
-</md-card>
+<div class="feed">
+  <md-card class="feed-item"
+    *ngFor="let feedItem of feed | filter: searchValue | order: filterValue; trackBy feedItem?.id">
+    <img md-card-image src="{{feedItem.image}}">
+    <md-card-content>
+      <div>{{feedItem.date}}</div>
+      <md-card-title>{{feedItem.title}}</md-card-title>
+      <md-card-subtitle>{{feedItem.description}}</md-card-subtitle>
+    </md-card-content>
+  </md-card>
+</div>
+<form class="form">
+  <md-input-container>
+    <input md-input type="search" [(ngModel)]="searchValue" placeholder="Search" name="search">
+  </md-input-container>
+  <md-select placeholder="Sort by" [(ngModel)]="filterValue" name="filter">
+    <md-option *ngFor="let filter of filters" [value]="filter.value">
+      {{filter.name}}
+    </md-option>
+  </md-select>
+</form>

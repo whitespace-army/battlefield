@@ -10,13 +10,17 @@ import { MenuComponent } from './menu/menu.component';
 import { FeedComponent } from './feed/feed.component';
 
 import { FeedService } from './feed/feed.service';
+import { FilterPipe } from './pipes/filter.pipe';
+import { OrderPipe } from './pipes/order.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     MenuComponent,
-    FeedComponent
+    FeedComponent,
+    FilterPipe,
+    OrderPipe
   ],
   imports: [
     MaterialModule.forRoot(),
