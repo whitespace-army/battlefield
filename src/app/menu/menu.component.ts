@@ -6,15 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.styl']
 })
 export class MenuComponent implements OnInit {
-  menu: Array<any> = [
+  links: Array<any> = [
     {
-      image: 'assets/menu/owl.jpg',
-      title: 'Sandwich Constructor',
-      description: 'Create a prefect sandwich!'
+      href: '',
+      title: 'Main Page'
     }, {
-      image: 'assets/menu/bird.jpg',
-      title: 'Sandwich Generator',
-      description: 'Construct a sandwich from food you already have!'
+      href: '/cheese/',
+      title: 'Sandwiches with cheese'
+    }, {
+      href: '/meat/',
+      title: 'Sandwiches with meat'
     }
   ];
   constructor() { }

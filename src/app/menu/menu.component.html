@@ -1,7 +1,15 @@
-<md-card class="item" *ngFor="let item of menu">
-  <img class="image" md-card-image src="{{ item.image }}">
-  <md-card-content>
-    <md-card-title class="title">{{ item.title }}</md-card-title>
-    <md-card-subtitle class="description">{{ item.description }}</md-card-subtitle>
-  </md-card-content>
-</md-card>
+<!--<nav md-tab-nav-bar>
+  <a md-tab-link
+     *ngFor="let link of links"
+     [routerLink]="link"
+     routerLinkActive #rla="routerLinkActive"
+     [active]="rla.isActive">
+    {{ link.name }}
+  </a>
+</nav>-->
+<nav md-tab-nav-bar>
+  <a md-tab-link *ngFor="let link of links" routerLink="{{link.href}}" class="menu-item"
+     [active]="rla.isActive" routerLinkActive #rla="routerLinkActive">
+    {{link.title}}
+  </a>
+</nav>
