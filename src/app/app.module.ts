@@ -15,6 +15,8 @@ import { MenuComponent } from './menu/menu.component';
 import { FeedComponent } from './feed/feed.component';
 import { FeaturesComponent } from './features/features.component';
 import { MainPageComponent } from './main-page/main-page.component';
+import { GeneratorComponent } from './generator/generator.component';
+import { ConstructorComponent } from './constructor/constructor.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { MainPageComponent } from './main-page/main-page.component';
     FilterPipe,
     OrderPipe,
     FeaturesComponent,
-    MainPageComponent
+    MainPageComponent,
+    GeneratorComponent,
+    ConstructorComponent
   ],
   imports: [
     MaterialModule.forRoot(),

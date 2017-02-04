@@ -1,4 +1,4 @@
-<md-card class="item" *ngFor="let item of menu">
+<md-card class="item" *ngFor="let item of menu" routerLink="{{ item.href }}">
   <img class="image" md-card-image src="{{ item.image }}">
   <md-card-content>
     <md-card-title class="title">{{ item.title }}</md-card-title>

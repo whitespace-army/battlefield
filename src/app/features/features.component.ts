@@ -10,11 +10,13 @@ export class FeaturesComponent implements OnInit {
     {
       image: 'assets/menu/owl.jpg',
       title: 'Sandwich Constructor',
-      description: 'Create a prefect sandwich!'
+      description: 'Create a prefect sandwich!',
+      href: 'constructor'
     }, {
       image: 'assets/menu/bird.jpg',
       title: 'Sandwich Generator',
-      description: 'Construct a sandwich from food you already have!'
+      description: 'Construct a sandwich from food you already have!',
+      href: 'generator'
     }
   ];
 

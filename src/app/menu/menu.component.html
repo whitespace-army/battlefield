@@ -8,7 +8,7 @@
   </a>
 </nav>-->
 <nav md-tab-nav-bar>
-  <a md-tab-link *ngFor="let link of links" routerLink="{{link.href}}" class="menu-item"
+  <a md-tab-link *ngFor="let link of links" routerLink="{{ link.href }}" class="menu-item"
      [active]="rla.isActive" routerLinkActive #rla="routerLinkActive">
     {{link.title}}
   </a>
