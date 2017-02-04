@@ -1,3 +1,7 @@
-<div *ngFor="let item of menuItems">
-  <div class="item">{{item}}</div>
-</div>
+<md-card class="item" *ngFor="let item of menu">
+  <img class="image" md-card-image src="{{ item.image }}">
+  <md-card-content>
+    <md-card-title class="title">{{ item.title }}</md-card-title>
+    <md-card-subtitle class="description">{{ item.description }}</md-card-subtitle>
+  </md-card-content>
+</md-card>

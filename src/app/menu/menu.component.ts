@@ -6,7 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.styl']
 })
 export class MenuComponent implements OnInit {
-  menuItems: Array<string> = ['Menu Item', 'Menu Item', 'Menu Item'];
+  menu: Array<any> = [
+    {
+      image: 'assets/menu/owl.jpg',
+      title: 'Sandwich Constructor',
+      description: 'Create a prefect sandwich!'
+    }, {
+      image: 'assets/menu/bird.jpg',
+      title: 'Sandwich Generator',
+      description: 'Construct a sandwich from food you already have!'
+    }
+  ];
   constructor() { }
 
   ngOnInit() {
