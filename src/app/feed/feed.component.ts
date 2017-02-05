@@ -13,11 +13,7 @@ import { MdIconRegistry } from '@angular/material';
 })
 export class FeedComponent implements OnInit {
 
-  constructor(private feedService: FeedService, iconRegistry: MdIconRegistry, sanitizer: DomSanitizer) {
-    iconRegistry.addSvgIcon(
-      'thumbs-up',
-      sanitizer.bypassSecurityTrustResourceUrl('assets/thumb-up.svg'));
-  }
+  constructor(private feedService: FeedService) {}
 
   filterValue: string;
 

@@ -17,6 +17,7 @@ import { FeaturesComponent } from './features/features.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { GeneratorComponent } from './generator/generator.component';
 import { ConstructorComponent } from './constructor/constructor.component';
+import { RatingComponent } from './rating/rating.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ConstructorComponent } from './constructor/constructor.component';
     FeaturesComponent,
     MainPageComponent,
     GeneratorComponent,
-    ConstructorComponent
+    ConstructorComponent,
+    RatingComponent
   ],
   imports: [
     MaterialModule.forRoot(),
