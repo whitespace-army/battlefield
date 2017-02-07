@@ -18,6 +18,7 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { GeneratorComponent } from './generator/generator.component';
 import { ConstructorComponent } from './constructor/constructor.component';
 import { RatingComponent } from './rating/rating.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { RatingComponent } from './rating/rating.component';
     MainPageComponent,
     GeneratorComponent,
     ConstructorComponent,
-    RatingComponent
+    RatingComponent,
+    LoginComponent
   ],
   imports: [
     MaterialModule.forRoot(),
