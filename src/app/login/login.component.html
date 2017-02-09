@@ -1,11 +1,11 @@
-<div>
+<form [formGroup]="loginForm" (ngSubmit)="login()">
   <div class="title">Login</div>
   <md-input-container>
-    <input md-input type="email" placeholder="Email">
+    <input md-input type="email" placeholder="Email" [formControl]="email">
   </md-input-container>
   <md-input-container>
-    <input md-input type="password" placeholder="Password">
+    <input md-input type="password" placeholder="Password" [formControl]="password">
   </md-input-container>
   <a md-raised-button color="accent" routerLink=".">Sign Up</a>
-  <button md-raised-button color="primary">Login</button>
-</div>
+  <button md-raised-button color="primary" type="submit">Login</button>
+</form>
