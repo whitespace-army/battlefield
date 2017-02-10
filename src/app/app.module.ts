@@ -6,6 +6,8 @@ import { MaterialModule } from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 
 import { FeedService } from './feed/feed.service';
+import { LoginService } from './login/login.service';
+
 import { FilterPipe } from './pipes/filter.pipe';
 import { OrderPipe } from './pipes/order.pipe';
 
@@ -22,12 +24,14 @@ import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
+    // Pipes
+    FilterPipe,
+    OrderPipe,
+    // Components
     AppComponent,
     HeaderComponent,
     MenuComponent,
     FeedComponent,
-    FilterPipe,
-    OrderPipe,
     FeaturesComponent,
     MainPageComponent,
     GeneratorComponent,
@@ -43,7 +47,7 @@ import { LoginComponent } from './login/login.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [FeedService],
+  providers: [FeedService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

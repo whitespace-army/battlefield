@@ -7,5 +7,5 @@
     <input md-input type="password" placeholder="Password" [formControl]="password">
   </md-input-container>
   <a md-raised-button color="accent" routerLink=".">Sign Up</a>
-  <button md-raised-button color="primary" type="submit">Login</button>
+  <button md-raised-button [disabled]="!loginForm.valid" color="primary" type="submit">Login</button>
 </form>
