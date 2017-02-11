@@ -2,7 +2,7 @@
   <img class="logo" src="/assets/logo.png">
 </a>
 <h1>Sandwich Club</h1>
-<a *ngIf="!isLoggedIn" md-raised-button routerLink="/login" color="primary">Login</a>
-<a *ngIf="isLoggedIn" md-raised-button (click)="logout()">Logout</a>
+<a *ngIf="!loginService.loggedIn" md-raised-button routerLink="/login" color="primary">Login</a>
+<a *ngIf="loginService.loggedIn" md-raised-button (click)="logout()">Logout</a>
 
 
