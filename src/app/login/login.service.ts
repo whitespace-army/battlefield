@@ -6,9 +6,10 @@ export class LoginService {
   private email: string = 'admin@admin.admin';
   private password: string = 'adminadmin';
   private auth_token: string = 'admin';
-  private profile: Object = {
+  public profile: Object = {
+    id: 1,
     name: 'Admin',
-    image: '/assets/profiles/admin'
+    image: '/assets/profiles/admin.png'
   };
   constructor() {
     this.loggedIn = !!localStorage.getItem('auth_token');
