@@ -1,24 +1,30 @@
-<div class="lol" *ngIf="sandwich">
+<div *ngIf="sandwich">
   <img class="image" src="{{ sandwich.image }}">
   <h1 class="title">{{sandwich.title}}</h1>
   <app-rating max="5" rate="{{ sandwich.rating }}" align="center"></app-rating>
-  <div class="description">
+  <md-card class="description">
     <div class="description-title">Description</div>
     {{ sandwich.description }}
-  </div>
+  </md-card>
   <div class="row">
-    <div class="stats">
-      <div class="stats-title">Stats</div>
-      <div *ngFor="let stat of stats">
-        <div class="stats-name">{{ stat }}</div>
-        <app-rating max="5" rate="{{ sandwich.stats[stat] }}"></app-rating>
-      </div>
+    <div class="column">
+      <md-card class="stats">
+        <div class="stats-title">Stats</div>
+        <div class="stats-item" *ngFor="let stat of stats">
+          <div class="stats-name">{{ stat }}</div>
+          <app-rating max="5" rate="{{ sandwich.stats[stat] }}"></app-rating>
+        </div>
+      </md-card>
+      <md-card class="calorie">
+        <div class="calorie-title">Сalorie</div>
+        <div class="calorie-description">{{ sandwich.calorie }} calories in 100g</div>
+      </md-card>
     </div>
-    <div class="ingredients">
+    <md-card class="ingredients">
       <div class="ingredients-title">Ingredients</div>
         <ul>
-          <li class="ingredient" *ngFor="let ingredient of sandwich.ingredients">{{ ingredient.name }}</li>
+          <li *ngFor="let ingredient of sandwich.ingredients">{{ ingredient.name }}</li>
         </ul>
-    </div>
+    </md-card>
   </div>
 </div>

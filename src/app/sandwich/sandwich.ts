@@ -5,5 +5,6 @@ export interface Sandwich {
   title: string,
   description: string,
   stats: Object,
+  calorie: number,
   ingredients: Array<any>
 }
