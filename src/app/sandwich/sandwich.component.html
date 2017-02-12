@@ -1,3 +1,5 @@
-<p>
-  sandwich works!
-</p>
+<template ngIf="sandwich">
+  <img class="image" src="{{ sandwich.image }}">
+  <div class="title">{{sandwich.title}}</div>
+  <app-rating max="5" rate="{{ sandwich.rating }}" align="center"></app-rating>
+</template>

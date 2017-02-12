@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { SandwichService } from './sandwich.service';
+import { ActivatedRoute, Params } from '@angular/router';
+import { Sandwich } from './sandwich';
 
 @Component({
   selector: 'app-sandwich',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SandwichComponent implements OnInit {
 
-  constructor() { }
+  private sandwich: Sandwich;
+
+  constructor(private route: ActivatedRoute, private sandwichService: SandwichService) { }
 
   ngOnInit() {
+    this.getSandwich();
   }
 
+  getSandwich() {
+    this.route.params.forEach((params: Params) => {
+      this.sandwich = this.sandwichService.getSandwich(parseInt(params['id']));
+    });
+  }
 }

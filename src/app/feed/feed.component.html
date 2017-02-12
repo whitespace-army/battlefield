@@ -1,15 +1,15 @@
 <div class="feed">
   <md-card class="item"
-    *ngFor="let feedItem of feed | filter: searchValue | order: filterValue; trackBy feedItem?.id">
-    <img class="image" md-card-image src="{{feedItem.image}}">
+    *ngFor="let sandwich of feed | filter: searchValue | order: filterValue; trackBy sandwich?.id">
+    <img class="image" md-card-image src="{{sandwich.image}}">
     <md-card-content>
       <md-card-title class="title">
-        <a class="link" routerLink="sandwich/{{ feedItem.id }}">
-          {{feedItem.title}}
+        <a class="link" routerLink="sandwich/{{ sandwich.id }}">
+          {{sandwich.title}}
         </a>
       </md-card-title>
-      <md-card-subtitle>{{feedItem.description}}</md-card-subtitle>
-      <app-rating max="5" rate="{{ feedItem.rating }}" align="center"></app-rating>
+      <md-card-subtitle>{{sandwich.description}}</md-card-subtitle>
+      <app-rating max="5" rate="{{ sandwich.rating }}" align="center"></app-rating>
     </md-card-content>
     <md-card-actions class="actions">
       <button md-button>SHARE</button>
