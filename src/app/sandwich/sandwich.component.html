@@ -1,5 +1,24 @@
-<template ngIf="sandwich">
+<div class="lol" *ngIf="sandwich">
   <img class="image" src="{{ sandwich.image }}">
-  <div class="title">{{sandwich.title}}</div>
+  <h1 class="title">{{sandwich.title}}</h1>
   <app-rating max="5" rate="{{ sandwich.rating }}" align="center"></app-rating>
-</template>
+  <div class="description">
+    <div class="description-title">Description</div>
+    {{ sandwich.description }}
+  </div>
+  <div class="row">
+    <div class="stats">
+      <div class="stats-title">Stats</div>
+      <div *ngFor="let stat of stats">
+        <div class="stats-name">{{ stat }}</div>
+        <app-rating max="5" rate="{{ sandwich.stats[stat] }}"></app-rating>
+      </div>
+    </div>
+    <div class="ingredients">
+      <div class="ingredients-title">Ingredients</div>
+        <ul>
+          <li class="ingredient" *ngFor="let ingredient of sandwich.ingredients">{{ ingredient.name }}</li>
+        </ul>
+    </div>
+  </div>
+</div>

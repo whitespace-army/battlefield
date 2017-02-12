@@ -12,6 +12,8 @@ export class SandwichComponent implements OnInit {
 
   private sandwich: Sandwich;
 
+  private stats: Array<String>;
+
   constructor(private route: ActivatedRoute, private sandwichService: SandwichService) { }
 
   ngOnInit() {
@@ -21,6 +23,11 @@ export class SandwichComponent implements OnInit {
   getSandwich() {
     this.route.params.forEach((params: Params) => {
       this.sandwich = this.sandwichService.getSandwich(parseInt(params['id']));
+      this.getStats();
     });
+  }
+
+  getStats() {
+    this.stats = Object.keys(this.sandwich.stats);
   }
 }

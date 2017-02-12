@@ -3,5 +3,7 @@ export interface Sandwich {
   rating: number,
   image: string,
   title: string,
-  description: string
+  description: string,
+  stats: Object,
+  ingredients: Array<any>
 }
