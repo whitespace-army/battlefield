@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { FeedItem } from './feed-item';
+import { Sandwich } from './sandwich';
 
 @Injectable()
-export class FeedService {
+export class SandwichService {
 
   constructor() {}
 
-  getFeed(): Array<FeedItem> {
+  getSandwiches(): Array<Sandwich> {
     return [
       {
         id: 1,

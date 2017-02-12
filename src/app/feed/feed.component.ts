@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FeedService } from './feed.service';
-import { FeedItem } from './feed-item';
-
-import { DomSanitizer } from '@angular/platform-browser';
-import { MdIconRegistry } from '@angular/material';
-
+import { SandwichService } from '../sandwich/sandwich.service';
+import { Sandwich } from '../sandwich/sandwich';
 
 @Component({
   selector: 'app-feed',
@@ -13,13 +9,12 @@ import { MdIconRegistry } from '@angular/material';
 })
 export class FeedComponent implements OnInit {
 
-  constructor(private feedService: FeedService) {}
+  constructor(private sandwichService: SandwichService) {}
 
-  filterValue: string;
+  private filterValue: string;
+  private searchValue: string;
 
-  searchValue: string;
-
-  filters: Array<any> = [{
+  private filters: Array<any> = [{
     name: 'ID',
     value: 'id'
   },{
@@ -27,13 +22,13 @@ export class FeedComponent implements OnInit {
     value: 'title'
   }];
 
-  feed: Array<FeedItem> = [];
+  feed: Array<Sandwich> = [];
 
-  getFeed(): Array<FeedItem> {
-     return this.feedService.getFeed();
+  getSandwich(): Array<Sandwich> {
+     return this.sandwichService.getSandwiches();
   }
 
   ngOnInit(): void {
-    this.feed = this.getFeed();
+    this.feed = this.getSandwich();
   }
 }

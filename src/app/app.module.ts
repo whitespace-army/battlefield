@@ -5,7 +5,7 @@ import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 
-import { FeedService } from './feed/feed.service';
+import { SandwichService } from './sandwich/sandwich.service';
 import { LoginService } from './login/login.service';
 
 import { FilterPipe } from './pipes/filter.pipe';
@@ -21,6 +21,7 @@ import { GeneratorComponent } from './generator/generator.component';
 import { ConstructorComponent } from './constructor/constructor.component';
 import { RatingComponent } from './rating/rating.component';
 import { LoginComponent } from './login/login.component';
+import { SandwichComponent } from './sandwich/sandwich.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { LoginComponent } from './login/login.component';
     GeneratorComponent,
     ConstructorComponent,
     RatingComponent,
-    LoginComponent
+    LoginComponent,
+    SandwichComponent
   ],
   imports: [
     MaterialModule.forRoot(),
@@ -47,7 +49,7 @@ import { LoginComponent } from './login/login.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [FeedService, LoginService],
+  providers: [SandwichService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

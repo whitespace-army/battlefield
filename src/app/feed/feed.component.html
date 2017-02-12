@@ -3,7 +3,11 @@
     *ngFor="let feedItem of feed | filter: searchValue | order: filterValue; trackBy feedItem?.id">
     <img class="image" md-card-image src="{{feedItem.image}}">
     <md-card-content>
-      <md-card-title>{{feedItem.title}}</md-card-title>
+      <md-card-title class="title">
+        <a class="link" routerLink="sandwich/{{ feedItem.id }}">
+          {{feedItem.title}}
+        </a>
+      </md-card-title>
       <md-card-subtitle>{{feedItem.description}}</md-card-subtitle>
       <app-rating max="5" rate="{{ feedItem.rating }}" align="center"></app-rating>
     </md-card-content>

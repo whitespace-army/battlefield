@@ -1,7 +1,7 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
-import { FeedService } from './feed.service';
+import { FeedService } from './sandwich.service';
 
 describe('FeedService', () => {
   beforeEach(() => {

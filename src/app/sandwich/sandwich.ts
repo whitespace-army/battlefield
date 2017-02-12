@@ -1,4 +1,4 @@
-export interface FeedItem {
+export interface Sandwich {
   id: number,
   rating: number,
   image: string,
