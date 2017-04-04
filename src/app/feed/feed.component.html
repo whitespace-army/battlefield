@@ -18,7 +18,7 @@
 </div>
 <form class="form">
   <md-input-container>
-    <input md-input type="search" [(ngModel)]="searchValue" placeholder="Search" name="search">
+    <input mdInput type="search" [(ngModel)]="searchValue" placeholder="Search" name="search">
   </md-input-container>
   <md-select placeholder="Sort by" [(ngModel)]="filterValue" name="filter">
     <md-option *ngFor="let filter of filters" [value]="filter.value">
