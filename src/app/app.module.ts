@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { MatButtonModule, MatIconModule, MatCardModule, MatInputModule, MatMenuModule, MatSelectModule, MatTabsModule } from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -42,6 +43,14 @@ import { SandwichComponent } from './sandwich/sandwich.component';
     SandwichComponent
   ],
   imports: [
+    MatButtonModule,
+    MatIconModule,
+    MatCardModule,
+    MatInputModule, 
+    MatMenuModule,
+    MatSelectModule,
+    MatTabsModule,
+    MatMenuModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
