@@ -1,28 +1,28 @@
 <div class="feed">
-  <md-card class="item"
-    *ngFor="let sandwich of feed | filter: searchValue | order: filterValue; trackBy sandwich?.id">
-    <img class="image" md-card-image src="{{sandwich.image}}">
-    <md-card-content>
-      <md-card-title class="title">
+  <mat-card class="item"
+    *ngFor="let sandwich of feed | filter: searchValue | order: filterValue; trackBy: sandwich?.id">
+    <img class="image" mat-card-image src="{{sandwich.image}}">
+    <mat-card-content>
+      <mat-card-title class="title">
         <a class="link" routerLink="sandwich/{{ sandwich.id }}">
           {{sandwich.title}}
         </a>
-      </md-card-title>
-      <md-card-subtitle>{{sandwich.description}}</md-card-subtitle>
+      </mat-card-title>
+      <mat-card-subtitle>{{sandwich.description}}</mat-card-subtitle>
       <app-rating max="5" rate="{{ sandwich.rating }}" align="center"></app-rating>
-    </md-card-content>
-    <md-card-actions class="actions">
+    </mat-card-content>
+    <mat-card-actions class="actions">
       <button mat-button>SHARE</button>
-    </md-card-actions>
-  </md-card>
+    </mat-card-actions>
+  </mat-card>
 </div>
 <form class="form">
-  <md-input-container>
-    <input mdInput type="search" [(ngModel)]="searchValue" placeholder="Search" name="search">
-  </md-input-container>
-  <md-select placeholder="Sort by" [(ngModel)]="filterValue" name="filter">
-    <md-option *ngFor="let filter of filters" [value]="filter.value">
+  <mat-input-container>
+    <input matInput type="search" [(ngModel)]="searchValue" placeholder="Search" name="search">
+  </mat-input-container>
+  <mat-select placeholder="Sort by" [(ngModel)]="filterValue" name="filter">
+    <mat-option *ngFor="let filter of filters" [value]="filter.value">
       {{filter.name}}
-    </md-option>
-  </md-select>
+    </mat-option>
+  </mat-select>
 </form>
