@@ -2,29 +2,29 @@
   <img class="image" src="{{ sandwich.image }}">
   <h1 class="title">{{sandwich.title}}</h1>
   <app-rating max="5" rate="{{ sandwich.rating }}" align="center"></app-rating>
-  <md-card class="description">
+  <mat-card class="description">
     <div class="description-title">Description</div>
     {{ sandwich.description }}
-  </md-card>
+  </mat-card>
   <div class="row">
     <div class="column">
-      <md-card class="stats">
+      <mat-card class="stats">
         <div class="stats-title">Stats</div>
         <div class="stats-item" *ngFor="let stat of stats">
           <div class="stats-name">{{ stat }}</div>
           <app-rating max="5" rate="{{ sandwich.stats[stat] }}"></app-rating>
         </div>
-      </md-card>
-      <md-card class="calorie">
+      </mat-card>
+      <mat-card class="calorie">
         <div class="calorie-title">Сalorie</div>
         <div class="calorie-description">{{ sandwich.calorie }} calories in 100g</div>
-      </md-card>
+      </mat-card>
     </div>
-    <md-card class="ingredients">
+    <mat-card class="ingredients">
       <div class="ingredients-title">Ingredients</div>
         <ul>
           <li *ngFor="let ingredient of sandwich.ingredients">{{ ingredient.name }}</li>
         </ul>
-    </md-card>
+    </mat-card>
   </div>
 </div>
