@@ -1,7 +1,7 @@
 <div class="feed">
   <mat-card class="item"
             *ngFor="let sandwich of feed | filter: searchValue | order: filterValue; trackBy: sandwich?.id">
-    <img class="image" mat-card-image src="{{sandwich.image}}">
+    <img class="image" mat-card-image [src]="sandwich.image">
     <mat-card-content>
       <mat-card-title class="title">
         <a class="link" routerLink="sandwich/{{ sandwich.id }}">
