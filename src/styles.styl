@@ -1,15 +1,17 @@
+@import './assets/css/extends.styl'
+
 html
   background-color #fcfcfe
 
 body
   margin 0
 
-*::selection {
-  color: white;
-  background: #3f51b5;
-}
+*::selection
+  color $c-white
+  background $c-purple
 
-*::-moz-selection{
-  color: white;
-  background: #3f51b5;
-}
+
+*::-moz-selection
+  color $c-white
+  background $c-purple
+

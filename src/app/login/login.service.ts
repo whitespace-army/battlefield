@@ -9,7 +9,7 @@ export class LoginService {
   public profile: Object = {
     id: 1,
     name: 'Admin',
-    image: '/assets/profiles/admin.png'
+    image: '/assets/img/profiles/admin.png'
   };
   constructor() {
     this.loggedIn = !!localStorage.getItem('auth_token');

@@ -23,6 +23,7 @@ import { ConstructorComponent } from './constructor/constructor.component';
 import { RatingComponent } from './rating/rating.component';
 import { LoginComponent } from './login/login.component';
 import { SandwichComponent } from './sandwich/sandwich.component';
+import { IngredientsComponent } from './ingredients/ingredients.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { SandwichComponent } from './sandwich/sandwich.component';
     ConstructorComponent,
     RatingComponent,
     LoginComponent,
-    SandwichComponent
+    SandwichComponent,
+    IngredientsComponent
   ],
   imports: [
     MatButtonModule,
@@ -54,7 +56,6 @@ import { SandwichComponent } from './sandwich/sandwich.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule,
     AppRoutingModule,
     BrowserAnimationsModule
   ],

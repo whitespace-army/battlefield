@@ -1,3 +1,2 @@
-<p>
-  generator works!
-</p>
+<app-ingredients [ingredients]="ingredients" (selected)="toggleIngredient($event)"></app-ingredients>
+<div *ngFor="let selectIngredient of selectIngredients"> {{ selectIngredient }}</div>

@@ -17,6 +17,9 @@ export class FeedComponent implements OnInit {
   }, {
     name: 'Title',
     value: 'title'
+  }, {
+    name: 'Rate',
+    value: 'rating'
   }];
 
   feed: Array<Sandwich> = [];

@@ -10,7 +10,7 @@ export class SandwichService {
       rating: 3,
       stats: {},
       calorie: 460,
-      image: '/assets/sandwiches/sandwich-1.jpg',
+      image: '/assets/img/sandwiches/sandwich-1.jpg',
       title: 'Rednecker',
       description: 'We will make Murica great again!',
       ingredients: ['white bread', 'tomato', 'pepper', 'cheese', 'arugua']
@@ -19,7 +19,7 @@ export class SandwichService {
       rating: 5,
       stats: {},
       calorie: 620,
-      image: '/assets/sandwiches/sandwich-2.jpg',
+      image: '/assets/img/sandwiches/sandwich-2.jpg',
       title: 'Caviar Sandwich',
       description: 'We will make Murica great again!',
       ingredients: ['white bread', 'salmon caviar']
@@ -32,7 +32,7 @@ export class SandwichService {
         satiety: 4
       },
       calorie: 690,
-      image: '/assets/sandwiches/sandwich-3.jpg',
+      image: '/assets/img/sandwiches/sandwich-3.jpg',
       title: 'Borderlands',
       description: 'We will make Murica great again!',
       ingredients: ['white bread', 'carrot', 'pate', 'salad', 'arugua', 'corn']
@@ -41,7 +41,7 @@ export class SandwichService {
       rating: 2,
       stats: {},
       calorie: 548,
-      image: '/assets/sandwiches/sandwich-4.jpg',
+      image: '/assets/img/sandwiches/sandwich-4.jpg',
       title: 'Roastbeeffo',
       description: 'We will make Murica great again!',
       ingredients: ['white bread', 'beef', 'carrot', 'cucumber', 'lettuce', 'pepper']
@@ -50,7 +50,7 @@ export class SandwichService {
       rating: 4.5,
       stats: {},
       calorie: 678,
-      image: '/assets/sandwiches/sandwich-5.jpg',
+      image: '/assets/img/sandwiches/sandwich-5.jpg',
       title: 'Shrimp sandwich',
       description: 'We will make Murica great again!',
       ingredients: ['white bread', 'shrimp', 'cabbage', 'egg']
@@ -59,7 +59,7 @@ export class SandwichService {
       rating: 5,
       stats: {},
       calorie: 490,
-      image: '/assets/sandwiches/sandwich-6.jpg',
+      image: '/assets/img/sandwiches/sandwich-6.jpg',
       title: 'La baguette',
       description: 'We will make Murica great again!',
       ingredients: ['baguette', 'smoked sausage']
