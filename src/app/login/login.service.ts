@@ -31,8 +31,4 @@ export class LoginService {
     localStorage.removeItem('auth_token');
     this.loggedIn = false;
   }
-
-  isLoggedIn() {
-    return this.loggedIn;
-  }
 }

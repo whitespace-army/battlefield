@@ -1,7 +1,7 @@
 <div *ngIf="sandwich">
   <img class="image" src="{{ sandwich.image }}">
   <h1 class="title">{{sandwich.title}}</h1>
-  <app-rating max="5" rate="{{ sandwich.rating }}" align="center"></app-rating>
+  <app-rating [max]="5" [rate]="sandwich.rating" align="center"></app-rating>
   <mat-card class="description">
     <div class="description-title">Description</div>
     {{ sandwich.description }}
@@ -12,7 +12,7 @@
         <div class="stats-title">Stats</div>
         <div class="stats-item" *ngFor="let stat of stats">
           <div class="stats-name">{{ stat }}</div>
-          <app-rating max="5" rate="{{ sandwich.stats[stat] }}"></app-rating>
+          <app-rating [max]="5" [rate]="sandwich.stats[stat]"></app-rating>
         </div>
       </mat-card>
       <mat-card class="calorie">
@@ -22,9 +22,9 @@
     </div>
     <mat-card class="ingredients">
       <div class="ingredients-title">Ingredients</div>
-        <ul>
-          <li *ngFor="let ingredient of sandwich.ingredients">{{ ingredient }}</li>
-        </ul>
+      <ul>
+        <li *ngFor="let ingredient of sandwich.ingredients">{{ ingredient }}</li>
+      </ul>
     </mat-card>
   </div>
 </div>
