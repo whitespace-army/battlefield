@@ -22,7 +22,7 @@ export class SandwichComponent implements OnInit {
 
   getSandwich() {
     this.route.params.forEach((params: Params) => {
-      this.sandwich = this.sandwichService.getSandwich(parseInt(params['id']));
+      this.sandwich = this.sandwichService.getSandwich(parseInt(params['id'], 10));
       this.getStats();
     });
   }

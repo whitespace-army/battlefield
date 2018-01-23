@@ -22,11 +22,12 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    const isLogged = this.loginService.login(this.loginForm.value)
-    isLogged && this.router.navigate(['']);
+    const isLogged = this.loginService.login(this.loginForm.value);
+    if (isLogged) {
+      this.router.navigate(['']);
+    }
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

@@ -8,12 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class FeaturesComponent implements OnInit {
   menu: Array<any> = [
     {
-      image: 'assets/menu/owl.jpg',
+      image: 'assets/img/menu/owl.jpg',
       title: 'Sandwich Constructor',
       description: 'Create a prefect sandwich!',
       href: 'constructor'
     }, {
-      image: 'assets/menu/bird.jpg',
+      image: 'assets/img/menu/bird.jpg',
       title: 'Sandwich Generator',
       description: 'Construct a sandwich from food you already have!',
       href: 'generator'
@@ -22,7 +22,6 @@ export class FeaturesComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }
