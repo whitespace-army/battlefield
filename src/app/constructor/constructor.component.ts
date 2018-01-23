@@ -9,7 +9,6 @@ export class ConstructorComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

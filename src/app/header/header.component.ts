@@ -9,8 +9,7 @@ import { LoginService } from '../login/login.service';
 export class HeaderComponent implements OnInit {
   constructor(private loginService: LoginService) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   logout() {
     this.loginService.logout();

@@ -8,21 +8,20 @@ import { Sandwich } from '../sandwich/sandwich';
   styleUrls: ['./feed.component.styl']
 })
 export class FeedComponent implements OnInit {
-
-  constructor(private sandwichService: SandwichService) {}
-
   private filterValue: string;
   private searchValue: string;
 
   private filters: Array<any> = [{
     name: 'ID',
     value: 'id'
-  },{
+  }, {
     name: 'Title',
     value: 'title'
   }];
 
   feed: Array<Sandwich> = [];
+
+  constructor(private sandwichService: SandwichService) {}
 
   getSandwich(): Array<Sandwich> {
      return this.sandwichService.getSandwiches();

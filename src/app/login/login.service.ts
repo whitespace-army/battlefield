@@ -3,9 +3,9 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class LoginService {
   public loggedIn = false;
-  private email: string = 'admin@admin.admin';
-  private password: string = 'adminadmin';
-  private auth_token: string = 'admin';
+  private email = 'admin@admin.admin';
+  private password = 'adminadmin';
+  private auth_token = 'admin';
   public profile: Object = {
     id: 1,
     name: 'Admin',
@@ -16,7 +16,9 @@ export class LoginService {
   }
 
   login(formData) {
-    if (!formData) return;
+    if (!formData)  {
+      return;
+    }
     const valid = formData.email === this.email && formData.password === this.password;
     if (valid) {
       localStorage.setItem('auth_token', this.auth_token);

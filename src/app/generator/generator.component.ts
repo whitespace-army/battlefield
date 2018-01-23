@@ -9,7 +9,6 @@ export class GeneratorComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

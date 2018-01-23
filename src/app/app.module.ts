@@ -46,7 +46,7 @@ import { SandwichComponent } from './sandwich/sandwich.component';
     MatButtonModule,
     MatIconModule,
     MatCardModule,
-    MatInputModule, 
+    MatInputModule,
     MatMenuModule,
     MatSelectModule,
     MatTabsModule,
