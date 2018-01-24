@@ -1,2 +1,4 @@
 <app-ingredients [ingredients]="ingredients" (selected)="toggleIngredient($event)"></app-ingredients>
-<div *ngFor="let selectIngredient of selectIngredients"> {{ selectIngredient }}</div>
+<div class="ingredients">
+  <div *ngFor="let selectIngredient of selectIngredients" class="ingredient_selected"> {{ selectIngredient }}</div>
+</div>
