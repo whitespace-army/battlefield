@@ -1,20 +1,7 @@
 <div class="feed">
-  <mat-card class="item"
-            *ngFor="let sandwich of feed | filter: searchValue | order: filterValue; trackBy: sandwich?.id">
-    <img class="image" mat-card-image [src]="sandwich.image">
-    <mat-card-content>
-      <mat-card-title class="title">
-        <a class="link" routerLink="sandwich/{{ sandwich.id }}">
-          {{sandwich.title}}
-        </a>
-      </mat-card-title>
-      <mat-card-subtitle>{{sandwich.description}}</mat-card-subtitle>
-      <app-rating [max]="5" [rate]="sandwich.rating" align="center"></app-rating>
-    </mat-card-content>
-    <mat-card-actions class="actions">
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
-  </mat-card>
+  <app-sandwich-card *ngFor="let sandwich of feed | filter: searchValue | order: filterValue; trackBy: sandwich?.id"
+                     [sandwich]="sandwich">
+  </app-sandwich-card>
 </div>
 <form class="form">
   <mat-input-container>

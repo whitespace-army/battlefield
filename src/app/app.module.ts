@@ -24,6 +24,7 @@ import { RatingComponent } from './rating/rating.component';
 import { LoginComponent } from './login/login.component';
 import { SandwichComponent } from './sandwich/sandwich.component';
 import { IngredientsComponent } from './ingredients/ingredients.component';
+import { SandwichCardComponent } from './sandwich-card/sandwich-card.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { IngredientsComponent } from './ingredients/ingredients.component';
     RatingComponent,
     LoginComponent,
     SandwichComponent,
-    IngredientsComponent
+    IngredientsComponent,
+    SandwichCardComponent
   ],
   imports: [
     MatButtonModule,
