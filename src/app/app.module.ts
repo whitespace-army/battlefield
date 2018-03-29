@@ -1,13 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { MatButtonModule, MatIconModule, MatCardModule, MatInputModule, MatMenuModule, MatSelectModule, MatTabsModule } from '@angular/material';
+import { MatButtonModule,
+         MatIconModule,
+         MatCardModule,
+         MatInputModule,
+         MatMenuModule,
+         MatSelectModule,
+         MatTabsModule } from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { SandwichService } from './sandwich/sandwich.service';
 import { LoginService } from './login/login.service';
+import { SignUpService } from './sign-up/sign-up.service';
 
 import { FilterPipe } from './pipes/filter.pipe';
 import { OrderPipe } from './pipes/order.pipe';
@@ -25,6 +31,7 @@ import { LoginComponent } from './login/login.component';
 import { SandwichComponent } from './sandwich/sandwich.component';
 import { IngredientsComponent } from './ingredients/ingredients.component';
 import { SandwichCardComponent } from './sandwich-card/sandwich-card.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +51,8 @@ import { SandwichCardComponent } from './sandwich-card/sandwich-card.component';
     LoginComponent,
     SandwichComponent,
     IngredientsComponent,
-    SandwichCardComponent
+    SandwichCardComponent,
+    SignUpComponent
   ],
   imports: [
     MatButtonModule,
@@ -61,7 +69,7 @@ import { SandwichCardComponent } from './sandwich-card/sandwich-card.component';
     AppRoutingModule,
     BrowserAnimationsModule
   ],
-  providers: [SandwichService, LoginService],
+  providers: [SandwichService, LoginService, SignUpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

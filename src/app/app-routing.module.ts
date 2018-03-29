@@ -5,22 +5,26 @@ import { SandwichComponent } from './sandwich/sandwich.component'
 import { MainPageComponent } from './main-page/main-page.component';
 import { GeneratorComponent } from './generator/generator.component';
 import { ConstructorComponent } from './constructor/constructor.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 const routes: Routes = [
   {
     path: '',
     children: [],
     component: MainPageComponent
-  },{
+  }, {
     path: 'login',
     component: LoginComponent
-  },{
+  }, {
+    path: 'signup',
+    component: SignUpComponent
+  }, {
     path: 'sandwich/:id',
     component: SandwichComponent
-  },{
+  }, {
     path: 'generator',
     component: GeneratorComponent
-  },{
+  }, {
     path: 'constructor',
     component: ConstructorComponent
   }
