@@ -1,12 +1,34 @@
-<!--<form [formGroup]="loginForm" (ngSubmit)="login()">-->
-  <!--<div class="title">Login</div>-->
+<form [formGroup]="signUpForm">
+  <div class="title">Sign Up</div>
+  <mat-input-container>
+    <input matInput type="text" placeholder="Login" formControlName="login" autocomplete="off">
+  </mat-input-container>
   <!--<mat-input-container>-->
-    <!--<input matInput type="email" placeholder="Email" formControlName="email">-->
+    <!--<input matInput type="email" placeholder="Email" formControlName="email" autocomplete="off">-->
   <!--</mat-input-container>-->
-  <!--<mat-input-container>-->
-    <!--<input matInput type="password" placeholder="Password" formControlName="password">-->
-  <!--</mat-input-container>-->
-  <!--<a mat-raised-button color="accent" routerLink=".">Sign Up</a>-->
-  <!--<button mat-raised-button [disabled]="!loginForm.valid" color="primary" type="submit">Login</button>-->
-<!--</form>-->
-<div>hi</div>
+
+
+    <input  matInput type="email" placeholder="Email" formControlName="email" autocomplete="off" [formControl]="emailFormControl"
+           [errorStateMatcher]="matcher">
+    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+      Please enter a valid email address
+    </mat-error>
+    <mat-error *ngIf="emailFormControl.hasError('required')">
+      Email is <strong>required</strong>
+    </mat-error>
+
+
+  <mat-input-container>
+    <input matInput type="password" placeholder="Password" formControlName="password" autocomplete="off">
+  </mat-input-container>
+  <mat-input-container>
+    <input matInput [matDatepicker]="picker" [matDatepickerFilter]="myFilter" placeholder="Your birth">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-input-container>
+  <mat-input-container>
+    <input matInput type="text" placeholder="FIO" formControlName="fio" autocomplete="off">
+  </mat-input-container>
+  <a mat-raised-button color="accent" routerLink=".">Sign Up</a>
+  <button (click)="resetForm()"  mat-raised-button color="primary">Reset</button>
+</form>

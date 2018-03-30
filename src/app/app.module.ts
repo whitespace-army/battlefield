@@ -7,7 +7,11 @@ import { MatButtonModule,
          MatInputModule,
          MatMenuModule,
          MatSelectModule,
-         MatTabsModule } from '@angular/material';
+         MatDatepickerModule,
+         MatTabsModule,
+  MatNativeDateModule,
+
+} from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -63,6 +67,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     MatSelectModule,
     MatTabsModule,
     MatMenuModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
