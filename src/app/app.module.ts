@@ -1,15 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatButtonModule,
-         MatIconModule,
-         MatCardModule,
-         MatInputModule,
-         MatMenuModule,
-         MatSelectModule,
-         MatDatepickerModule,
-         MatTabsModule,
-  MatNativeDateModule,
+import {
+    MatButtonModule,
+    MatIconModule,
+    MatCardModule,
+    MatInputModule,
+    MatMenuModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatTabsModule,
+    MatNativeDateModule, ErrorStateMatcher, ShowOnDirtyErrorStateMatcher,
 
 } from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
@@ -75,7 +76,15 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     AppRoutingModule,
     BrowserAnimationsModule
   ],
-  providers: [SandwichService, LoginService, SignUpService],
+  providers: [
+      SandwichService,
+      LoginService,
+      SignUpService,
+      {
+        provide: ErrorStateMatcher,
+        useClass: ShowOnDirtyErrorStateMatcher,
+      },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

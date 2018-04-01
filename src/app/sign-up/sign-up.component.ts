@@ -1,40 +1,36 @@
-import {Component} from '@angular/core';
-import {FormGroup, FormControl, EmailValidator, FormGroupDirective, NgForm, Validators} from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {FormGroup, FormControl, Validators} from '@angular/forms';
+
 
 @Component({
-  selector: 'app-sign-up',
-  templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.styl']
+    selector: 'app-sign-up',
+    templateUrl: './sign-up.component.html',
+    styleUrls: ['./sign-up.component.styl']
 })
 
-export class SignUpComponent {
-  // matcher = new MyErrorStateMatcher();
+export class SignUpComponent implements OnInit {
+    signUpForm: FormGroup;
+    maxDate = new Date;
 
-  emailFormControl = new FormControl('', [
-    Validators.required,
-    Validators.email,
-  ]);
+    ngOnInit() {
+        this.signUpForm = new FormGroup({
+            login: new FormControl('', [Validators.minLength(4), Validators.required]),
+            password: new FormControl('', [Validators.minLength(4), Validators.required]),
+            email: new FormControl('', [Validators.email, Validators.required]),
+            fio: new FormControl('', Validators.maxLength(250)),
+            birth: new FormControl('',  Validators.required),
+        });
+    }
 
-  public signUpForm: FormGroup = new FormGroup({
-    login: new FormControl('', [Validators.minLength(4), Validators.required]),
-    password: new FormControl('', [Validators.minLength(4), Validators.required]),
-    email: new FormControl('', Validators.required),
-    fio: new FormControl('', [Validators.maxLength(250), Validators.required]),
-  });
+    onSubmit(): void {
+        console.log('sign up');
+    }
 
-  public resetForm() {
-    this.signUpForm.reset();
-  }
+    public isValidBirth() {
+        // const today = new Date().getFullYear();
+    }
 
-  // export class MyErrorStateMatcher implements ErrorStateMatcher {
-  // isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-  //   const isSubmitted = form && form.submitted;
-  //   return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
-  // }
-
-  // myFilter = (d: Date): any => {
-  //   const year = d.getFullYear();
-  //   console.log(year)
-  // return year !== 0 && day !== 4;
-  // }
+    public resetForm() {
+        this.signUpForm.reset();
+    }
 }
