@@ -57,7 +57,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     SandwichComponent,
     IngredientsComponent,
     SandwichCardComponent,
-    SignUpComponent
+    SignUpComponent,
   ],
   imports: [
     MatButtonModule,

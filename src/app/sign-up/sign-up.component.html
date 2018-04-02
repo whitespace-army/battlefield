@@ -13,8 +13,7 @@
 
     <mat-input-container>
         <input matInput type="email" placeholder="Email" formControlName="email" name="email" autocomplete="off">
-        <mat-error
-                *ngIf="signUpForm.controls['email'].hasError('email') && !signUpForm.controls['email'].hasError('required')">
+        <mat-error *ngIf="signUpForm.controls['email'].hasError('email') && !signUpForm.controls['email'].hasError('required')">
             Please enter a valid email address
         </mat-error>
         <mat-error *ngIf="signUpForm.controls['email'].hasError('required')">
@@ -38,14 +37,19 @@
             formControlName="birth"
             [matDatepicker]="picker"
             [max]="maxDate"
+            ngModel
+            validateBirth
+            (dateInput)="isValidBirth($event)"
             placeholder="Your birth">
+
+      <!--(dateInput)="isValidBirth($event)"-->
 
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
         <mat-error *ngIf="signUpForm.controls['birth'].hasError('required')">
             Set your birth date
         </mat-error>
-        <mat-error *ngIf="!isValidBirth">
+        <mat-error [hidden]="signUpForm.controls['birth'].hasError('validateBirth')">
             Should be older than 14 years old
         </mat-error>
     </mat-input-container>
