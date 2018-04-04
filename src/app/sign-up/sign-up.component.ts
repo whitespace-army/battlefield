@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormGroup, FormControl, Validators, AbstractControl} from '@angular/forms';
-import {MatDatepickerInputEvent} from '@angular/material';
+import {FormGroup, FormControl, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-sign-up',
@@ -18,45 +17,24 @@ export class SignUpComponent implements OnInit {
       password: new FormControl('', [Validators.minLength(4), Validators.required]),
       email: new FormControl('', [Validators.email, Validators.required]),
       fio: new FormControl('', Validators.maxLength(250)),
-      birth: new FormControl('', [Validators.required]),
+      birth: new FormControl('', [Validators.required, this._validateBirth.bind(this)]),
     });
+  }
 
-    // function validateBirth(input: FormControl) {
-    //   const hasExclamation = input.value.indexOf('!') >= 0;
-    //   console.log(hasExclamation);
-    //   return hasExclamation ? null : { needsExclamation: true };
-    // }
+  private _validateBirth(input: FormControl) {
+    const date = input.value;
+    const now = new Date();
+    const fourteenYearsAgoDate = new Date(now);
+    const nowInMilliseconds = now.getTime();
+    fourteenYearsAgoDate.setFullYear(now.getFullYear() - 14);
 
-    // export function ValidateUrl(control: AbstractControl) {
-    //   if (!control.value.startsWith('https') || !control.value.includes('.io')) {
-    //     return { validUrl: true };
-    //   }
-    //   return null;
-    // }
-
-    // function validateBirth(input: FormControl) {
-        // const chosenDate = event.value.getFullYear();
-
-        // if (year - chosenDate < 5) {
-        //   console.log('dscdcd')
-        // }
-
-        // return input.value.indexOf(year) >= 0 ?
-        //   null :
-        //   { [errorType]: true };
-    // }
+    if (nowInMilliseconds - new Date(date).getTime() < nowInMilliseconds - fourteenYearsAgoDate.getTime()) {
+      return { isValidBirth: true };
+    }
   }
 
   onSubmit(): void {
     console.log('sign up');
-  }
-
-  isValidBirth(event: MatDatepickerInputEvent<Date>) {
-    const chosenDate = event.value.getFullYear();
-    const nowYear = new Date().getFullYear();
-    if (nowYear - chosenDate < 14) {
-      console.log('ты еще маленький, чтобы жрать бургеры');
-    }
   }
 
   public resetForm() {

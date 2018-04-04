@@ -39,10 +39,7 @@
             [max]="maxDate"
             ngModel
             validateBirth
-            (dateInput)="isValidBirth($event)"
             placeholder="Your birth">
-
-      <!--(dateInput)="isValidBirth($event)"-->
 
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
