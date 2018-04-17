@@ -1,34 +1,54 @@
 import {Component, OnInit} from '@angular/core';
-import { Sandwich } from '../sandwich/sandwich';
-import { SandwichService } from '../sandwich/sandwich.service';
+import {Sandwich} from '../sandwich/sandwich';
+import {SandwichService} from '../sandwich/sandwich.service';
 
 @Component({
-  selector: 'app-generator',
-  templateUrl: './generator.component.html',
-  styleUrls: ['./generator.component.styl']
+    selector: 'app-generator',
+    templateUrl: './generator.component.html',
+    styleUrls: ['./generator.component.styl']
 })
 export class GeneratorComponent implements OnInit {
-  public ingredients: string[] = ['white bread', 'beef', 'carrot', 'cucumber', 'lettuce', 'pepper', 'arugua', 'corn'];
-  public selectIngredients: string[] = [];
-  availableSandwich: Array<Sandwich> = [];
+    public ingredients: string[] = ['white bread', 'beef', 'carrot', 'cheese', 'cucumber', 'lettuce', 'pepper', 'arugua', 'corn'];
+    public selectIngredients: string[] = [];
+    availableSandwich: Array<Sandwich> = [];
+    public sortedSandwiches: Array<Sandwich> = [];
 
-  constructor(private sandwichService: SandwichService) { }
-
-  getSandwich(): Array<Sandwich> {
-    return this.sandwichService.getSandwiches();
-  }
-
-  ngOnInit(): void {
-    this.availableSandwich = this.getSandwich();
-  }
-
-  public toggleIngredient(ingredient: string): void {
-    if (!this.selectIngredients.includes(ingredient)) {
-      this.selectIngredients.push(ingredient);
-    } else {
-      this.selectIngredients = this.selectIngredients.filter(function(value) {
-        return value !== ingredient;
-      });
+    constructor(private sandwichService: SandwichService) {
     }
-  }
+
+    getSandwich(): Array<Sandwich> {
+        return this.sandwichService.getSandwiches();
+    }
+
+    ngOnInit(): void {
+        this.availableSandwich = this.getSandwich();
+    }
+
+    public toggleIngredient(ingredient: string): void {
+        if (!this.selectIngredients.includes(ingredient)) {
+            this.selectIngredients.push(ingredient);
+        } else {
+            this.selectIngredients = this.selectIngredients.filter(function (value) {
+                return value !== ingredient;
+            });
+        }
+
+        this.sortSandwiches();
+    }
+
+    public sortSandwiches(): void {
+        this.sortedSandwiches = [];
+
+        for (let i = 0; i < this.getSandwich().length; i++) {
+            const isIngredientsMatch = this.selectIngredients.every(
+                elem => this.sandwichService.getSandwiches()[i].ingredients.includes(elem)
+            );
+
+            if (isIngredientsMatch && this.selectIngredients.length !== 0) {
+                this.sortedSandwiches.push(this.sandwichService.getSandwiches()[i]);
+
+            }
+        }
+        this.availableSandwich = this.sortedSandwiches;
+    }
 }

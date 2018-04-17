@@ -1,11 +1,10 @@
 <app-ingredients [ingredients]="ingredients" (selected)="toggleIngredient($event)"></app-ingredients>
 <div class="ingredients">
   <div *ngFor="let selectIngredient of selectIngredients"  class="ingredient_selected"> {{ selectIngredient }}</div>
-  <input type="search" [(ngModel)]="sort" placeholder="Search" name="search">
 </div>
 
 <div class="sandwiches-available">
-  <app-sandwich-card *ngFor="let sandwich of availableSandwich | filter: sort"
+  <app-sandwich-card *ngFor="let sandwich of availableSandwich"
                      [sandwich]="sandwich">
   </app-sandwich-card>
 </div>

@@ -3,7 +3,7 @@
 
     <mat-input-container>
         <input matInput type="text" placeholder="Login" formControlName="login">
-        <mat-error *ngIf="!signUpForm.controls['login'].hasError('minLength' && 'required')">
+        <mat-error *ngIf="!signUpForm.controls['login'].hasError('minLength') && !signUpForm.controls['login'].hasError('required')">
             Login should be more than 4 symbols
         </mat-error>
         <mat-error *ngIf="signUpForm.controls['login'].hasError('required')">
@@ -23,7 +23,7 @@
 
     <mat-input-container>
         <input matInput type="password" placeholder="Password" formControlName="password" autocomplete="new-password">
-        <mat-error *ngIf="!signUpForm.controls['password'].hasError('minLength' && 'required')">
+        <mat-error *ngIf="!signUpForm.controls['password'].hasError('minLength') && !signUpForm.controls['password'].hasError('required')">
             Password should be more than 4 symbols
         </mat-error>
         <mat-error *ngIf="signUpForm.controls['password'].hasError('required')">
